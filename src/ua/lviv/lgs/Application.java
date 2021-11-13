@@ -42,18 +42,24 @@ public class Application {
             }
 
             case 2: {
-               String[][] array = new String[getRandomValue(100, 1)][getRandomValue(100, 1)];
+               List l = new ArrayList();
 
-                for (String[] anArr : array) {
-                    for (String anAnArr : anArr) {
-                        Wheel w = new Wheel(getRandomValueDouble(16, 9), "Alcantara");
-                        Engine e = new Engine(getRandomValue(12, 4));
-                        Car c = new Car(getRandomValue(700, 150), getRandomValue(2021, 2000));
+               int count = getRandomValue(10, 1);
 
-                        array = new String[][]{{w.toString(), e.toString(), c.toString()}};
-                    }
-                    System.out.println(Arrays.deepToString(array));
-                }
+               for (int i = 0; i <= count; i++) {
+                   Wheel w = new Wheel(getRandomValueDouble(14, 10), "Alcantara");
+                   Engine e = new Engine(getRandomValue(12, 4));
+                   Car c = new Car(getRandomValue(700, 200), getRandomValue(2021, 2000));
+
+                   l.clear();
+
+                   l.add(w);
+                   l.add(e);
+                   l.add(c);
+
+                   System.out.println(l);
+               }
+                    break;
             }
 
             case 3: {
@@ -61,18 +67,22 @@ public class Application {
                 System.out.println("Task 2B");
                 Car car = new Car(getRandomValue(700, 150), getRandomValue(2021, 2000));
 
-                String[] arrayAuto = new String[getRandomValue(100, 0)];
+                int count = getRandomValue(10, 1);
 
-                for (String s : arrayAuto) {
-                    Wheel w = new Wheel(getRandomValueDouble(16, 9), "Alcantara");
+                List lAuto = new ArrayList(getRandomValue(100, 1));
+
+                for (int i = 0; i <= count; i++) {
+                    Wheel w = new Wheel(getRandomValueDouble(14, 10), "Alcantara");
                     Engine e = new Engine(getRandomValue(12, 4));
 
-                    arrayAuto = new String[]{w.toString(), e.toString(), " "};
-                    Arrays.fill(arrayAuto, 2,3, car.toString());
+                    lAuto.clear();
 
-                    System.out.println(Arrays.deepToString(arrayAuto));
+                    lAuto.add(w);
+                    lAuto.add(e);
+                    lAuto.add(car);
+
+                    System.out.println(lAuto);
                 }
-
 
             }
         }
